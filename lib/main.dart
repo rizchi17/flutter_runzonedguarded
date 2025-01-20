@@ -78,6 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('同期的 + tryCatch')),
             SizedBox(height: 50),
             ElevatedButton(
+                onPressed: () {
+                  asynchronous();
+                },
+                child: Text('非同期的 + tryCatch')),
+            SizedBox(height: 50),
+            ElevatedButton(
                 onPressed: () async {
                   await runZonedGuarded(() async {
                     asynchronous();
@@ -86,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(error);
                   });
                 },
-                child: Text('非同期的 + tryCatch')),
+                child: Text('非同期的 + tryCatch + runZonedGuarded')),
             SizedBox(height: 50),
             ElevatedButton(
                 onPressed: () {
